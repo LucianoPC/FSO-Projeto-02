@@ -1,0 +1,1 @@
+cmd_/home/luciano/Documentos/Drivers/Virus/driverVirus/meuDriver.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.5.0-17-generic/scripts/module-common.lds --build-id  -o /home/luciano/Documentos/Drivers/Virus/driverVirus/meuDriver.ko /home/luciano/Documentos/Drivers/Virus/driverVirus/meuDriver.o /home/luciano/Documentos/Drivers/Virus/driverVirus/meuDriver.mod.o

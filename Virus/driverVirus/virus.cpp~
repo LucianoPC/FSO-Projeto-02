@@ -1,0 +1,36 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	ifstream arquivoLido("multplica.c");
+	//ifstream arquivoLido("multplica.exe");
+	//ifstream arquivoLido("Luciano.txt");
+	
+	system("ls -l");
+	
+	char bufferLeitura[4096];
+	string linha;
+	vector<string> conteudo;
+	
+	cout << "arquivoLido.is_open(): " << arquivoLido.is_open() << endl;
+	
+	while(arquivoLido.getline(bufferLeitura, 4096))
+	{
+		linha = bufferLeitura;
+		conteudo.push_back(linha);
+	}
+
+	arquivoLido.close();
+	
+	for(int i = 0; i < conteudo.size(); i++)
+	{
+		cout << conteudo[i] << endl;
+	}
+	
+	printf("\nOk!\n\n");
+	return 0;
+}

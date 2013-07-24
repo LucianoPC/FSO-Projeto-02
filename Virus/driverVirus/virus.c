@@ -1,0 +1,9 @@
+#include "stdlib.h"
+
+int main()
+{
+	system("rmmod meuDriver");
+	system("insmod meuDriver.ko");
+		
+	return 0;
+}

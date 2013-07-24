@@ -1,0 +1,1 @@
+cmd_/home/luciano/Documentos/Drivers/Aprendendo/Parte01/nothing.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.5.0-17-generic/scripts/module-common.lds --build-id  -o /home/luciano/Documentos/Drivers/Aprendendo/Parte01/nothing.ko /home/luciano/Documentos/Drivers/Aprendendo/Parte01/nothing.o /home/luciano/Documentos/Drivers/Aprendendo/Parte01/nothing.mod.o

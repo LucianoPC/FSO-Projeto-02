@@ -1,0 +1,1 @@
+cmd_/home/luciano/Documentos/Drivers/Aprendendo/Parte03/memory.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.5.0-17-generic/scripts/module-common.lds --build-id  -o /home/luciano/Documentos/Drivers/Aprendendo/Parte03/memory.ko /home/luciano/Documentos/Drivers/Aprendendo/Parte03/memory.o /home/luciano/Documentos/Drivers/Aprendendo/Parte03/memory.mod.o

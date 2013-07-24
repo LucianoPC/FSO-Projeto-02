@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main()
+{
+	int numeroUm;
+	int numeroDois;
+	int soma;
+	
+	numeroUm = 2;
+	numeroDois = 3;
+	
+	soma = 2 + 3;
+	
+	printf("\n%d + %d = %d\n", numeroUm, numeroDois, soma);
+	
+	printf("\nOk!\n\n");
+	return 0;
+}
+

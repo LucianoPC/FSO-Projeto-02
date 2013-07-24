@@ -1,0 +1,1 @@
+cmd_/home/luciano/Documentos/Drivers/Aprendendo/Parte02/hello.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.5.0-17-generic/scripts/module-common.lds --build-id  -o /home/luciano/Documentos/Drivers/Aprendendo/Parte02/hello.ko /home/luciano/Documentos/Drivers/Aprendendo/Parte02/hello.o /home/luciano/Documentos/Drivers/Aprendendo/Parte02/hello.mod.o
